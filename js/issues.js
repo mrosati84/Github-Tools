@@ -6,9 +6,5 @@
 
     $('.gh-header-show ').append($('<p>').html('add branch: ' + issue_id + '-' + issue_title));
 
-    $(window).on('unload', function () {
-        console.log('xx');
-    });
-
     window.APP = APP;
 }(jQuery));
