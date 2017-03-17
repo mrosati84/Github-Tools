@@ -1,0 +1,48 @@
+{
+  "manifest_version": 2,
+
+  "name": "Github Tools",
+  "description": "Add functionality to Github",
+  "version": "1.0",
+
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  },
+
+  "browser_action": {
+    "default_icon": "48.png",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "page": "background.html"
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "webNavigation"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://github.com/robots.txt*"],
+      "js": [
+        "js/settings.js",
+        "js/jquery.js",
+        "js/utils.js",
+        "js/oauth.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": ["https://github.com/*/*/issues/*"],
+      "js": [
+        "js/jquery.js",
+        "js/settings.js",
+        "js/utils.js",
+        "js/issues.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
