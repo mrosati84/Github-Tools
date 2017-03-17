@@ -35,7 +35,7 @@
       "run_at": "document_start"
     },
     {
-      "matches": ["https://github.com/*/*/issues/*"],
+      "matches": ["https://github.com/**"],
       "js": [
         "js/jquery.js",
         "js/settings.js",
